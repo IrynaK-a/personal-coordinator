@@ -34,7 +34,7 @@ export const ContactsSection: React.FC<Props> = ({ className }) => {
         <h2 className={styles.sectionTitle}>Do you have questions?</h2>
 
         <p className={styles.sectionText}>
-          Contact our team if you have any questions and we will very happy to
+          Contact our team if you have any questions and we will be very happy to
           help you with everything
         </p>
 
