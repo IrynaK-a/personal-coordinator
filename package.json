@@ -1,7 +1,6 @@
 {
   "name": "personal-coordinator",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
