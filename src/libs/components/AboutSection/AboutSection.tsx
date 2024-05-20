@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import cn from 'classnames';
 import { StyledEngineProvider } from '@mui/material/styles';
 
