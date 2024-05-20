@@ -22,9 +22,9 @@ export const AboutSection: React.FC<Props> = ({ className }) => {
 
         <p className={styles.aboutText}>
           <span className={styles.styledName}>{`Personal coordinator `} </span>
-          is an innovative e-learning platform that ensures accessible and effective education.
+          {`is an innovative e-learning platform that ensures accessible and effective education.
           Our platform is created to upgrade your studying experience and create a friendly and 
-          modern study environment.
+          modern study environment.`}
         </p>
 
         <h2 className={styles.subtitle}>
