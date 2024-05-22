@@ -41,7 +41,7 @@ export const getCourses = createAsyncThunk(
     question: ${FIND_COURSES_FORM_DATA[2].label}, answer: ${payload.schedule};
     question: ${FIND_COURSES_FORM_DATA[3].label}, answer: ${payload.format};
     question: ${FIND_COURSES_FORM_DATA[4].label}, answer: ${payload.price}; 
-    If link is not available get link to the https://www.coursera.org/.
+    Use Google search for searching course that are available in 2023.
     Return the result in JSON format. Each object has a name, description, link and image key.
     The value of a key "name" should have max 60 characters, the value of a key "description" should have max 200 characters, the value of a key "link" should be a link to the course page or where it can be found, the value of a key "image" should be a https://cdn-icons-png.flaticon.com/512/4762/4762232.png`;
 
