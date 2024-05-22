@@ -10,7 +10,7 @@ import {
   ICourseTask,
 } from '../types';
 import { tasksApi } from '../api/tasksApi';
-import { deleteCourse, getCurrent } from './coursesSlice';
+import { deleteCourse, getCurrent as getCurrentCourse } from './coursesSlice';
 import { NOTIFICATION_MESSAGES } from '../constants';
 
 export interface ICourseState {
@@ -105,10 +105,12 @@ export const { reducer, actions } = createSlice({
       state.deleteTaskRequestStatus = DataStatus.REJECTED;
       toast.error(NOTIFICATION_MESSAGES.task.error);
     });
-    builder.addCase(getCurrent.fulfilled, (state, { payload }) => {
+    builder.addCase(getCurrentCourse.fulfilled, (state, { payload }) => {
       state.taskRequestStatus = DataStatus.FULFILLED;
       if (payload) {
         state.currentTasks = payload.courseTasks;
+      } else {
+        state.currentTasks = [];
       }
     });
     builder.addCase(deleteCourse.fulfilled, (state, { payload }) => {
