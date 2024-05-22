@@ -107,7 +107,7 @@ export const { reducer, actions } = createSlice({
     });
     builder.addCase(getCurrentCourse.fulfilled, (state, { payload }) => {
       state.taskRequestStatus = DataStatus.FULFILLED;
-      if (payload) {
+      if (payload.courseTasks) {
         state.currentTasks = payload.courseTasks;
       } else {
         state.currentTasks = [];
