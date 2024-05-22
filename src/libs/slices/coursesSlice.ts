@@ -62,6 +62,8 @@ export const createNewCourse = createAsyncThunk(
   async (payload: CreateCourseData) => {
     const newCourse = await myCoursesApi.create(payload);
 
+    console.log(newCourse);
+
     return newCourse;
   },
 );

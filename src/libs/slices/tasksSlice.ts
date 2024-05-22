@@ -61,9 +61,7 @@ export const { reducer, actions } = createSlice({
   extraReducers(builder) {
     builder.addCase(createTask.fulfilled, (state, { payload }) => {
       state.taskRequestStatus = DataStatus.FULFILLED;
-      if (payload) {
-        state.currentTasks.push(payload);
-      }
+      state.currentTasks.push(payload);
     });
     builder.addCase(createTask.pending, state => {
       state.taskRequestStatus = DataStatus.PENDING;
@@ -75,11 +73,9 @@ export const { reducer, actions } = createSlice({
     });
     builder.addCase(deleteCurrentTask.fulfilled, (state, { payload }) => {
       state.deleteTaskRequestStatus = DataStatus.FULFILLED;
-      if (payload) {
-        state.currentTasks = state.currentTasks.filter(
-          task => task.id !== payload,
-        );
-      }
+      state.currentTasks = state.currentTasks.filter(
+        task => task.id !== payload,
+      );
       toast.success(NOTIFICATION_MESSAGES.deleteTask.success);
     });
     builder.addCase(deleteCurrentTask.pending, state => {
@@ -107,16 +103,10 @@ export const { reducer, actions } = createSlice({
     });
     builder.addCase(getCurrentCourse.fulfilled, (state, { payload }) => {
       state.taskRequestStatus = DataStatus.FULFILLED;
-      if (payload.courseTasks) {
-        state.currentTasks = payload.courseTasks;
-      } else {
-        state.currentTasks = [];
-      }
+      state.currentTasks = payload.courseTasks;
     });
-    builder.addCase(deleteCourse.fulfilled, (state, { payload }) => {
-      if (payload) {
-        state.currentTasks = [];
-      }
+    builder.addCase(deleteCourse.fulfilled, state => {
+      state.currentTasks = [];
     });
   },
 });
