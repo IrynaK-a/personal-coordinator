@@ -62,8 +62,6 @@ export const createNewCourse = createAsyncThunk(
   async (payload: CreateCourseData) => {
     const newCourse = await myCoursesApi.create(payload);
 
-    console.log(newCourse);
-
     return newCourse;
   },
 );
@@ -122,10 +120,9 @@ export const { reducer, actions } = createSlice({
     });
     builder.addCase(deleteCourse.fulfilled, (state, { payload }) => {
       state.coursesRequestStatus = DataStatus.FULFILLED;
-      state.myCourses =
-        payload && state.myCourses
-          ? state.myCourses.filter(course => course.id !== payload.id)
-          : state.myCourses;
+      state.myCourses = state.myCourses
+        ? state.myCourses.filter(course => course.id !== payload.id)
+        : state.myCourses;
       toast.success(NOTIFICATION_MESSAGES.deleteCourse.success);
     });
     builder.addCase(deleteCourse.pending, state => {
