@@ -12,6 +12,7 @@ import {
 } from '../../components';
 import { DataStatus } from '../../types';
 import * as coursesActions from '../../slices/coursesSlice';
+import * as tasksActions from '../../slices/tasksSlice';
 
 import styles from './CoursePage.module.scss';
 
@@ -35,6 +36,7 @@ export const CoursePage = () => {
   useEffect(
     () => () => {
       dispatch(coursesActions.actions.setNoCurrentCourse());
+      dispatch(tasksActions.actions.setNoCurrentTasks());
     },
     [dispatch],
   );

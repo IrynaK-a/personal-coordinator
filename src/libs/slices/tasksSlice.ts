@@ -57,7 +57,11 @@ export const updateCurrentTask = createAsyncThunk(
 export const { reducer, actions } = createSlice({
   initialState,
   name: 'tasks',
-  reducers: {},
+  reducers: {
+    setNoCurrentTasks(state) {
+      state.currentTasks = [];
+    },
+  },
   extraReducers(builder) {
     builder.addCase(createTask.fulfilled, (state, { payload }) => {
       state.taskRequestStatus = DataStatus.FULFILLED;
@@ -66,7 +70,6 @@ export const { reducer, actions } = createSlice({
     builder.addCase(createTask.pending, state => {
       state.taskRequestStatus = DataStatus.PENDING;
     });
-
     builder.addCase(createTask.rejected, state => {
       state.taskRequestStatus = DataStatus.REJECTED;
       toast.error(NOTIFICATION_MESSAGES.task.error);
