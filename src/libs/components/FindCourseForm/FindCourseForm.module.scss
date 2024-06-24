@@ -1,0 +1,56 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 10px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    padding: 50px 30px 20px;
+  }
+}
+
+.label {
+  @include body-text;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include on-big-screens {
+    font-size: 16px;
+  }
+}
+
+.textarea {
+  height: 60px;
+  padding: 10px;
+  font-family: inherit;
+  word-wrap: break-word;
+  border: 1px solid $icons;
+  border-radius: 5px;
+  outline: none;
+
+  &::placeholder {
+    color: $secondary;
+    font-size: 10px;
+    line-height: 12px;
+
+    @include on-big-screens {
+      @include body-text;
+
+      color: $secondary;
+    }
+  }
+
+  @include on-big-screens {
+    @include body-text;
+
+    height: 70px;
+  }
+}

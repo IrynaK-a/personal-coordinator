@@ -1,0 +1,60 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+
+.messageContainer {
+  @include flexbox-align-center;
+
+  flex-direction: column;
+  margin-bottom: 30px;
+  padding: 25px 10px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    padding: 25px;
+  }
+}
+
+.errorContainer {
+  border: 3px solid $main-accent;
+
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
+
+  @include on-big-screens {
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.title {
+  @include h3;
+
+  color: $primary;
+
+  @include on-big-screens {
+    @include h2;
+  }
+}
+
+.errorTitle {
+  color: $main-accent;
+}
+
+.message {
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+
+  @include on-big-screens {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

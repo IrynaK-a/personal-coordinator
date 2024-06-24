@@ -1,0 +1,224 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+@import '/src/assets/css/breakpoints';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.layout {
+  position: relative;
+  width: 100%;
+  max-width: $max-width;
+  height: 100vh;
+  padding: $body-padding-mobile;
+  padding-bottom: 0;
+
+  @include on-big-screens {
+    display: flex;
+    min-width: $large;
+    padding: 0 $body-padding-desktop;
+  }
+
+  @include on-tablet {
+    min-width: $medium;
+    padding: 0 $body-padding-tablet;
+  }
+}
+
+.header {
+  @include flexbox-align-center;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: space-between;
+  height: $menu-height-mobile;
+  padding-inline: $body-padding-mobile;
+  background-color: $white;
+  border-top: 1px solid $icons;
+
+  @include on-big-screens {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    width: $menu-width-desktop;
+    min-width: $menu-width-desktop;
+    height: 100%;
+    padding: 50px 10px 20px;
+    border-top: none;
+    border-right: 1px solid $icons;
+  }
+  
+  @include on-tablet {
+    min-width: $menu-width-tablet;
+  }
+}
+
+.header > .logoIcon {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 134px;
+  }
+}
+
+.header > .logoText {
+  display: none;
+
+  @include on-desktop {
+    @include h1;
+    
+    display: block;
+    margin-bottom: 134px;
+  }
+
+  @include on-extra-large {
+    @include h1;
+
+    display: block;
+    margin-bottom: 134px;
+    font-size: 34px;
+  }
+}
+
+.nav {
+  flex-grow: 1;
+  max-width: 70%;
+
+  @include on-big-screens {
+    max-width: 100%;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include on-big-screens {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.link {
+  @include flexbox-align-center;
+
+  padding: 10px;
+  color: $secondary;
+
+  @include on-big-screens {
+    padding: 0;
+  }
+
+  & > *,
+  & > * > * {
+    transition: all $transiton-duration;
+  }
+
+  &:hover > *,
+  &:hover > * > *
+   {
+    color: $main-accent;
+    fill: $main-accent;
+  }
+}
+
+.activeLink {
+  color: $main-accent;
+}
+
+.linkImg {
+  width: 32px;
+  height: 32px;
+
+  @include on-big-screens {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+  }
+}
+
+.linkLabel {
+  @include h2;
+
+  display: none;
+
+  @include on-big-screens {
+    display: inline-block;
+  }
+
+  @include on-tablet {
+    @include h3;
+  }
+}
+
+.activeLink > span {
+  color: $main-accent;
+}
+
+.activeLink > svg > path {
+  fill: $main-accent;
+}
+
+.contentContainer {
+  position: relative;
+  flex-grow: 1;
+  height: calc(100% - $menu-height-mobile);
+  padding: $content-padding-top-mobile $content-padding-inline-mobile $content-padding-bottom;
+  background-color: $hover;
+
+  @include on-big-screens {
+    min-width: calc(100% - $menu-width-desktop);
+    height: 100%;
+    padding: $content-padding-top-desktop $content-padding-inline-desktop $content-padding-bottom;
+  }
+
+  @include on-tablet {
+    min-width: calc(100% - $menu-width-tablet);
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.addButton{
+  @include flexbox-center;
+  @include buttons-text;
+  @include button-hover;
+
+  position: absolute;
+  right: 2 * $content-padding-inline-mobile;
+  bottom: 1.5 * $content-padding-bottom;
+  padding: 15px 20px;
+  color: $white;
+  font-size: 24px;
+  background-color: $icons;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px $shadow-color;
+  
+
+  @include on-big-screens {
+    right: 2.5 * $content-padding-inline-desktop;
+    bottom: 1.5 * $content-padding-bottom;
+    padding: 25px 30px;
+  }
+
+  @include on-tablet {
+    right: 1.5 * $content-padding-inline-desktop;
+    padding: 20px 25px;
+  }
+}

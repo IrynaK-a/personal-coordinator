@@ -1,0 +1,25 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.tasksContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  height: 100%;
+  padding: 25px 15px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    padding: 50px 30px;
+  }
+}
+
+.noTasksInfo {
+  @include flexbox-center;
+  @include h3;
+
+  width: 100%;
+  height: 100%;
+}

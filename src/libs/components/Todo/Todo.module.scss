@@ -1,0 +1,49 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.container {
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.checkbox {
+  width: 26px;
+  height: 26px;
+  color: $main-accent;
+
+  @include on-big-screens {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $main-accent;
+  outline: none;
+  
+  @include body-text;  
+  
+  @include on-big-screens {
+    @include h3;
+
+    font-weight: 400;
+  }
+}
+
+.taskName {
+  @include h3;
+
+  width: 100%;
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.deleteButton {
+  color: $icons;
+  font-size: 24px;
+}

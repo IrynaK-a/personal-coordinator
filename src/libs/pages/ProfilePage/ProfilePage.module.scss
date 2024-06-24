@@ -1,0 +1,169 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.personInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 55px;
+
+  @include on-big-screens {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @include on-tablet {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+
+  @include on-big-screens {
+    width: 240px;
+    height: 240px;
+  }
+
+  @include on-tablet {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.personInfo {
+  flex-grow: 1;
+  width: 100%;
+  padding: 20px 15px;
+  background-color: $white;
+  border: 2px solid $main-accent;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    width: 400px;
+    padding: 30px 50px;
+  }
+
+  @include on-tablet {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}
+
+.name{
+  @include h2;
+  
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: $main-accent;
+  text-align: center;
+
+  @include on-big-screens {
+    @include h1;
+  }
+}
+
+.emailContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include on-big-screens {
+    font-size: 18px;
+  }
+}
+
+.email {
+  word-break: break-all;
+}
+
+.statistics {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+
+  @include on-big-screens {
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  @include on-tablet {
+    align-items: center;
+  gap: 30px;
+
+  }
+}
+
+.statisticsTitle {
+  @include h2;
+
+  color: $primary;
+
+  @include on-big-screens {
+    @include h1;
+  }
+}
+
+.statisticCard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+  color: $primary;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    width: 400px;
+  }
+
+  @include on-tablet {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+.cardTitle {
+  @include h2;
+
+  margin-bottom: 10px;
+}
+
+.valueContainer {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+}
+
+.percentageValueContainer {
+  margin-bottom: 15px;
+}
+
+.percentageValue {
+  @include h2;
+}
+
+.valueContainerTitle {
+  @include h3;
+
+  font-weight: 500;
+}
+
+.absoluteValue {
+  @include h3;
+
+  font-weight: 500;
+
+}

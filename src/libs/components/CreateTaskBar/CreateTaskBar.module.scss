@@ -1,0 +1,33 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.addTaskForm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 15px 20px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    padding-block: 20px;
+  }
+}
+
+.plusIcon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.addTaskInput {
+  @include h3;  
+
+  width: 100%;
+  font-family: inherit;
+  border: none;
+  outline: none;
+
+  &::placeholder{
+    color: $secondary;
+  }
+}

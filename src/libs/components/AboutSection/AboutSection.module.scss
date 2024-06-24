@@ -1,0 +1,84 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  @include h2;
+
+  margin-bottom: 20px;
+
+
+  @include on-big-screens {
+    @include h1;
+
+    margin-bottom: 40px;
+  }
+}
+
+.aboutText {
+  @include body-text;
+
+  margin-bottom: 20px;
+
+  @include on-big-screens {
+    max-width: 950px;
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.styledName {
+  color: $main-accent;
+  font-weight: 700;
+}
+
+.subtitle {
+  @include h2;
+
+  margin-bottom: 20px;
+
+
+  @include on-big-screens {
+    @include h1;
+
+    margin-bottom: 40px;
+  }
+}
+
+.styledSubtitleText {
+  color: $main-accent;
+}
+
+.quote {
+  @include h3;
+
+  color: $primary;
+
+  @include on-big-screens {
+    @include h2;
+  }
+}
+
+.styledQuoteText {
+  color: $icons;
+}
+
+.button {
+  @include flexbox-center;
+  @include buttons-text;
+  @include button-standart;
+
+  width: 100px;
+  height: 30px;
+  margin-bottom: 25px;
+
+  @include on-big-screens {
+    width: 150px;
+    height: 40px;
+  }
+}

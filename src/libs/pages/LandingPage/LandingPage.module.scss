@@ -1,0 +1,78 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.mainContainer {
+  @include flexbox-align-center;
+
+  flex-direction: column;
+  background-image: url("../../../assets/img/main-background.png");
+  background-repeat: no-repeat;
+  background-position: 100px 0;
+  border-bottom: 1px solid $shadow-color;
+
+  @include on-big-screens {
+    background-position: 500px 0;
+  }
+
+  @include on-extra-large {
+    background-position: 700px 0;
+  }
+}
+
+.mainContent {
+  max-width: $max-width;
+  min-height: calc(100vh - #{$header-height-mobile} - #{$footer-height-mobile});
+  padding: 30px $body-padding-mobile;
+
+  @include on-big-screens {
+    min-height: calc(100vh - #{$header-height-desktop} - #{$footer-height-desktop});
+  }
+
+  @include on-tablet {
+    padding: 50px $body-padding-tablet 30px;
+  }
+
+  @include on-desktop {
+    width: $max-width;
+    padding: 50px $body-padding-desktop 30px;
+  }
+
+  @include on-extra-large {
+    width: $max-width;
+    padding: 50px $body-padding-desktop 30px;
+  }
+}
+
+.registrationSection {
+  margin-bottom: 50px;
+  scroll-margin-top: $header-height-mobile + 20px;
+
+  @include on-big-screens {
+    margin-bottom: 80px;
+    scroll-margin-top: $header-height-desktop + 20px;
+  }
+}
+
+.aboutSection {
+  margin-bottom: 50px;
+  scroll-margin-top: $header-height-mobile + 20px;
+
+  @include on-big-screens {
+    margin-bottom: 80px;
+    scroll-margin-top: $header-height-desktop + 20px;
+  }
+}
+
+.footer {
+  @include on-big-screens {
+    @include flexbox-center;
+  }
+}

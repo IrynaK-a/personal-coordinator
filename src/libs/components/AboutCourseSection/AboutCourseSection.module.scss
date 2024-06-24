@@ -1,0 +1,219 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 100%;
+  padding: 20px 15px;
+  background-color: $white;
+  border-radius: 20px;
+
+  @include on-big-screens {
+    padding: 20px;
+  }
+}
+
+.mainInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+
+  @include on-big-screens {
+    gap: 50px;
+  }
+}
+
+.textInfo {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.textInfoGrow {
+  @include on-big-screens {
+    flex-grow: 0;
+  }
+}
+
+.image {
+  display: none;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+
+  @include on-big-screens {
+    display: block;
+  }
+}
+
+.imageForBigScreen {
+  display: none;
+
+  @include on-big-screens {
+    display: block;
+  }
+}
+
+.courseManipulationContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  color: $black;
+  font-family: inherit;
+  font-size: 18px;
+  word-break: break-all;
+  border: none;
+  border-bottom: 1px solid $icons;
+  outline: none;
+  padding-inline: 5px;
+}
+
+.submitButton {
+  padding: 3px 6px;
+  color: $primary;
+  font-weight: 500;
+  border: 2px solid $primary;
+  border-radius: 10px;
+  transition: all $transiton-duration;
+
+  &:hover {
+    color: $white;
+    background-color: $primary;
+  }
+}
+
+.title {
+  @include h2;
+
+  color: $primary;
+  word-break: keep-all;
+}
+
+.titleContainer {
+  @include flexbox-center;
+
+  gap: 10px;
+}
+
+.iconButton {
+  padding: 0;
+}
+
+.changeIcon {
+  width: 18px;
+  height: 18px;
+
+  @include on-big-screens {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover > * {
+    transition: all $transiton-duration;
+    fill: $primary;
+  }
+}
+
+.deleteIcon {
+  width: 24px;
+  height: 24px;
+
+  @include on-big-screens {
+    width: 28px;
+    height: 28px;
+  }
+
+  &:hover > * {
+    transition: all $transiton-duration;
+    fill: $primary;
+  }
+}
+
+.linkContainer {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  @include small-text;
+
+  width: max-content;
+  padding-right: 10px;
+  color: $second-accent;
+  font-size: 18px;
+  line-height: 18px;
+  transition: all $transiton-duration;
+
+  &:hover {
+    color: $primary;
+  }
+
+  @include on-big-screens {
+    @include body-text;
+
+    color: $second-accent;
+    font-size: 16px;
+  }
+}
+
+.linkChangeButton {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: all $transiton-duration; 
+
+  &:hover > path {
+    fill: $main-accent;
+  }
+}
+
+.startDay {
+  @include small-text;
+
+  @include on-big-screens {
+    @include body-text;
+  }
+}
+
+.descriptionButtonSection {
+  @include flexbox-center;
+  
+  margin-bottom: 10px;
+}
+
+.descriptionButton {
+  @include flexbox-align-center;
+
+  margin-right: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  transition: all $transiton-duration;
+
+  &:hover {
+    color: $main-accent;
+  } 
+}
+
+.activeDescriptionButton {
+  color: $main-accent;
+}
+
+.description {
+  width: 100%;
+  margin: 0;
+  word-break: break-all;
+}

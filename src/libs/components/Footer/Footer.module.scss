@@ -1,0 +1,56 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.footer {
+  @include flexbox-center;
+
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: $max-width;
+  height: $footer-height-mobile;
+  padding: 20px $body-padding-mobile;
+
+  @include on-big-screens {
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    height: $footer-height-desktop;
+  }
+
+  @include on-tablet {
+    padding: 0 $body-padding-tablet;
+  }
+
+  @include on-desktop {
+    padding: 0 $body-padding-desktop;
+  }
+}
+
+.footerNav {
+  flex-direction: column;
+  align-items: center;
+
+  @include on-big-screens {
+    flex-direction: row;
+    font-size: 14px;
+  }
+}
+
+.logo {
+  @include on-tablet {
+    position: absolute;
+    left: $body-padding-tablet;
+  }
+
+  @include on-desktop {
+    position: absolute;
+    left: $body-padding-desktop;
+  }
+
+  @include on-extra-large {
+    position: absolute;
+    left: 0;
+  }
+}

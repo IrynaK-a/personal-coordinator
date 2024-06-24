@@ -1,0 +1,137 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 15px;
+  background-color: $white;
+  border-radius: 20px;
+  transition: all $transiton-duration;
+
+  @include on-big-screens {
+    padding: 20px 50px;
+  }
+
+  @include on-tablet {
+    padding: 10px 20px;
+  }
+
+  &:hover{
+    box-shadow: 0 3px 7px 0 $shadow-color;
+  }
+}
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+  height: max-content;
+}
+
+.title {
+  @include h2;
+
+  color: $primary;
+  line-height: 26px;
+  word-break: break-all;
+  transition: all $transiton-duration;
+
+  &:hover {
+    color: $main-accent;
+  }
+}
+
+.deleteButton {
+  padding: 0;
+}
+
+.deleteIcon {
+  width: 24px;
+  height: 24px;
+
+  @include on-big-screens {
+    width: 28px;
+    height: 28px;
+  }
+
+  & > * {
+    transition: all $transiton-duration;
+  }
+
+  &:hover > * {
+    fill: $primary;
+  }
+}
+
+.startDay {
+  @include small-text;
+
+  @include on-big-screens {
+    @include body-text;
+  }
+}
+
+.tasksSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include on-big-screens {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+}
+
+.subtitle {
+  @include h3;
+
+  margin-bottom: 10px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+}
+
+.seeMoreLink {
+  @include flexbox-align-center;
+  @include buttons-text;
+
+  color: $main-accent;
+
+  &::after {
+    width: 15px;
+    height: 17px;
+    margin-left: 5px;
+    text-align: center;
+    content: url("../../../assets//icons/arrow-right_accent.svg");
+  } 
+}

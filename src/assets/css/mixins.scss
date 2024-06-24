@@ -1,0 +1,111 @@
+@import './breakpoints';
+
+@mixin on-mobile {
+  @media screen and (min-width: $small) and (max-width: ($medium - 1)) {
+
+    @content;
+  }
+}
+
+@mixin on-big-screens {
+  @media screen and (min-width: $medium ){
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media screen and (min-width: $medium) and (max-width: ($large - 1)) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media screen and (min-width: $large ) and (max-width: ($extra-large - 1)) {
+    @content;
+  }
+}
+
+@mixin on-extra-large {
+  @media screen and (min-width: $extra-large ) {
+    @content;
+  }
+}
+
+@mixin h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+}
+
+@mixin h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 31px;
+}
+
+@mixin h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+@mixin body-text {
+  color: $black;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+@mixin small-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+}
+
+@mixin buttons-text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+@mixin uppercase-text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 0.04em;
+}
+
+@mixin flexbox-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexbox-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin button-standart {
+  color: $white;
+  font-family: inherit;
+  text-transform: capitalize;
+  background-color: $main-accent;
+  border: 1px solid $main-accent;
+  border-radius: 50px;
+  transition: all $transiton-duration;
+
+
+  @include button-hover;
+}
+
+@mixin button-hover {
+  transition: all $transiton-duration;
+  
+  &:hover {
+    background-color: $primary;
+    border-color: $primary;
+    box-shadow: 0 3px 13px 0 rgb(23 32 49 / 40%);
+  }
+}

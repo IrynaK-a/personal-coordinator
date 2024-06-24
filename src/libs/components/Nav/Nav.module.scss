@@ -1,0 +1,39 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+
+  @include on-big-screens {
+    gap: 60px;
+    font-size: 18px;
+  }
+}
+
+.item {
+  @include uppercase-text;
+
+  @include on-big-screens {
+    font-size: inherit;
+  }
+}
+
+.link {
+  color: $black;
+  padding-block: 20px;
+
+  @include on-big-screens {
+    padding-block: 40px;
+  }
+
+  &:hover {
+    color: $main-accent;
+  }
+}
+
+.linkSelected {
+  color: $main-accent;
+}
+

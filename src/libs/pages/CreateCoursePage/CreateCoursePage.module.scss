@@ -1,0 +1,77 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.container {
+  width: 100%;
+  padding: 40px 30px 30px;
+  background-color: $white;
+  border-radius: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputsSection {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 40px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid $icons ;
+
+  &:focus {
+    border-color: $main-accent;
+  }
+
+  &::placeholder {
+    color: $icons;
+    font-family: inherit;
+    font-weight: 400;
+    text-align: left;
+  }
+
+  &:first-child {
+    color: $main-accent;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.inputWithError {
+  margin-bottom: 5px;
+}
+
+.error {
+  margin-bottom: 40px;
+  color: $red;
+}
+
+.submitButton {
+  @include buttons-text;
+  @include button-standart;
+
+  margin: 0 auto;
+  padding: 10px 15px;
+  color: $white;
+  background-color: $main-accent;
+
+  &:disabled {
+    background-color: disabled;
+    cursor: not-allowed;
+  }
+}

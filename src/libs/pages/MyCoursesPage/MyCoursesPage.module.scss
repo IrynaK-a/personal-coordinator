@@ -1,0 +1,30 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+.noCoursesSection {
+  @include flexbox-center;
+
+  height: 60%;
+}
+
+
+.createCourseLink {
+  @include h2;
+  @include button-hover;
+
+  padding: 10px 20px;
+  color: $white;
+  background-color: $main-accent;
+  border-radius: 20px;
+}
+

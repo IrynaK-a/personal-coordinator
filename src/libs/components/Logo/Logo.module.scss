@@ -1,0 +1,36 @@
+@import '/src/assets/css/variables';
+@import '/src/assets/css/mixins';
+
+.logoIcon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+
+  @include on-big-screens {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.logoTextLink {
+  text-decoration: none;
+}
+
+.logoText {
+  color: $main-accent;
+  font-family: inherit; 
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  transition: all $transiton-duration;
+
+  &:hover {
+    color: $primary;
+  }
+} 
